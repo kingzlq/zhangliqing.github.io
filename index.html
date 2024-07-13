@@ -2,116 +2,134 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>zhangliqing the developer and writer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Div with Left Text and Right Image</title>
     <style>
-body {
-    font-family: "Roboto", sans-serif;
-    width:100%;
-    height:100%
-}
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            flex-direction: column;
 
-.bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: url("/pic/bg.jpg") no-repeat;
-    background-position: center center;
-    background-size: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-}
-
-.g-glossy {
-    position: fixed;
-    width: 600px;
-    height: 300px;
-    line-height: 40px;
-    top: 40%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    color: #333;
-    font-size: 24px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    z-index: 10;
-    border-radius: 1rem;
-    box-shadow: 0px 1px 4px rgba(0,0,0,0.3),
-				0px 0px 20px rgba(0,0,0,0.1) inset;
-    @supports (
-    background: -moz-element(#bg)) {
-        &::before {
-            content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: -moz-element(#bg) no-repeat;
-    filter: blur(10px);
-    z-index: 5;
+            background-image: url('img/background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh;
         }
-    }
-}
-
-.konwme{
-    position: fixed;
-    top: 80%;
-    width: 600px;
-    height: 30px;
-    left: 50%;
-    color: blanchedalmond;
-    margin-left: -300px;
-    text-align: center;
-}
-footer {
-    position: fixed;
-    top: 90%;
-    left: 50%;
-    width: 600px;
-    text-align: center;
-    margin-left: -300px;
-}
-.info{color: #ffffff6b;}
-
-    </style>
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .text-section {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-section img {
+            max-width: 100%;
+        }
+        .content{    
+            font-size: 16px;
+            color: #323131;
+            padding: 1px 0 0 5px;
+        }
+        .middleContent{
+            height: 350px;
+        }
+        .middleContent ul{
+            list-style-type: none;
+            margin: 140px 0 0 0;
+            padding: 0;
+        }
+        .middleContent ul li{
+            line-height: 1.5;
+            padding: 0 0 20px 0;
+            text-align: center;
+            color: #030c50b9;
+        }
+        .middleContent ul li img{
+            width: 30px;
+            vertical-align: middle;
+        }
+        .middleContent ul li a{
+            vertical-align: middle;
+            text-decoration: none;
+            color: #030c50b9;
+        }
+        .middleContent ul li a:visited{
+            color: #030c50b9;
+        }
+        footer {
+            position: fixed;
+            top: 90%;
+            left: 50%;
+            width: 600px;
+            text-align: center;
+            margin-left: -300px;
+            color: #666060;
+        }
+        </style>
 </head>
 <body>
-<div id="bg" class="bg">
-</div>
-<div class="g-glossy ">
-    <p style="margin-top: 60px;">夜已深</p>
-    <p>人未眠</p>
-    <p>风雨窗外弦</p>
-</div>
-<div class="g-glossy-firefox"></div>
-<div class="konwme">
-    me:&nbsp;&nbsp;&nbsp;
-    zhanglq.lofter.com&nbsp;&nbsp;&nbsp;
-    admin@zhangliqing.cn
-</div>
-<footer>
-    <p class="info">
-        <span>All Rights Reserved.</span>
-        <span>鲁ICP备16031961号-1</span>
-    </p>
-</footer>
-<script src="//libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-<script>
-    $(function() {
-        let blur = $('.g-glossy-firefox')[0].style;
-        let offset = $('.g-glossy').eq(0).offset();
-
-        function updateBlur() {
-            blur.backgroundPosition =
-                `${-window.scrollX - offset.left}px ` +
-                `${-window.scrollY - offset.top}px`;
-        }
-        document.addEventListener('scroll', updateBlur, false), updateBlur();
-    });
-</script>
+    <div class="container">
+        <div class="text-section">
+            <h2>请坐，让我讲一个故事</h2>
+            <div class="content">
+                <p>漆黑的夜，人们都沉睡了</p>
+                <p>呼啸的风，从海上吹来</p>
+                <p>沉寂的山谷，蕴藏着危险</p>
+                <p>战士啊，你可准备好应战？</p>
+            </div>
+            <div class="content">
+                <p>彻夜的等待使你倦怠</p>
+                <p>破旧的杯盛满了孤独</p>
+                <p>还有片时迎来黎明</p>
+                <p>勿要沉睡，侧耳静听</p>
+            </div>
+            <!-- <div class="content">
+                <p>当战火烧遍原野</p>
+                <p>当痛苦撕裂山脉</p>
+                <p>拯救将从天降临</p>
+                <p>神迹要从东方再现</p>
+            </div> -->
+        </div>
+        <div class="image-section ">
+            <img src="img/1722157482751.png" alt="Placeholder Image">
+        </div>
+    </div>
+    <div class="middleContent">
+        <ul>
+            <li>
+                <img src="img/wechat2.svg" /> <a href="weixin://contacts/profile/jsonformat" target="_blank">zlq wxChat</a>
+            </li>
+            <li>
+                <img src="img/link.svg" /> <a href="https://zhanglq.lofter.com" target="_blank">zhanglq.lofter.com</a>
+            </li>
+            <li>
+                <img src="img/email.svg" /> <a href="mailto:admin@zhangliqing.cn">admin@zhangliqing.cn</a>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <p class="info">
+            <span>All Rights Reserved.</span>
+            <span>鲁ICP备16031961号-1</span>
+        </p>
+    </footer>
 </body>
 </html>
