@@ -13,76 +13,100 @@
             margin: 0;
             background-color: #f0f0f0;
             flex-direction: column;
-
             background-image: url('img/background.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            margin: 0;
-            height: 100vh;
         }
         .container {
             display: flex;
-            width: 80%;
+            flex-direction: column;
+            width: 90%;
             max-width: 800px;
             background-color: white;
             border: 1px solid #ccc;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+
+            overflow: scroll;
+            scrollbar-width: none; /* firefox */
+            -ms-overflow-style: none; /* IE 10+ */
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .container::-webkit-scrollbar {
+            display: none; /* Chrome Safari */
         }
         .text-section {
             flex: 1;
-            padding-right: 20px;
+            padding-right: 0;
         }
         .image-section {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: 20px;
         }
         .image-section img {
             max-width: 100%;
         }
-        .content{    
+        .content {
             font-size: 16px;
             color: #323131;
             padding: 1px 0 0 5px;
         }
-        .middleContent{
+        .middleContent {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px 0;
         }
-        .middleContent ul{
+        .middleContent ul {
             list-style-type: none;
             margin: 40px 0 0 0;
             padding: 0;
         }
-        .middleContent ul li{
+        .middleContent ul li {
             line-height: 1.5;
             padding: 0 0 20px 0;
             text-align: center;
             color: #030c50b9;
         }
-        .middleContent ul li img{
+        .middleContent ul li img {
             width: 30px;
             vertical-align: middle;
         }
-        .middleContent ul li a{
+        .middleContent ul li a {
             vertical-align: middle;
             text-decoration: none;
             color: #030c50b9;
         }
-        .middleContent ul li a:visited{
+        .middleContent ul li a:visited {
             color: #030c50b9;
         }
         footer {
-            position: fixed;
-            top: 95%;
+            /* position: fixed; */
+            bottom: 10px;
             left: 50%;
-            width: 600px;
+            /* transform: translateX(-50%); */
+            width: 90%;
+            max-width: 600px;
             text-align: center;
-            margin-left: -300px;
             color: #666060;
         }
-        </style>
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+            .text-section {
+                padding-right: 20px;
+            }
+            .image-section {
+                margin-top: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -100,14 +124,8 @@
                 <p>还有片时迎来黎明</p>
                 <p>勿要沉睡，侧耳静听</p>
             </div>
-            <!-- <div class="content">
-                <p>当战火烧遍原野</p>
-                <p>当痛苦撕裂山脉</p>
-                <p>拯救将从天降临</p>
-                <p>神迹要从东方再现</p>
-            </div> -->
         </div>
-        <div class="image-section ">
+        <div class="image-section">
             <img src="img/me6.png" alt="Placeholder Image">
         </div>
     </div>
